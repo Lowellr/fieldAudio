@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Field. — A field recording app for iOS. High-quality audio, geo-tagging, live sound identification, and speech transcription. For sound artists, nature recordists, and curious ears." />
+  <title>Field. — Field Recording for iOS</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:           #0A0A0A;
+      --surface:      rgba(255,255,255,0.04);
+      --border:       rgba(255,255,255,0.07);
+      --accent:       #3FB1CE;
+      --accent-glow:  rgba(63,177,206,0.18);
+      --accent-soft:  rgba(63,177,206,0.08);
+      --text:         #E4F0EC;
+      --text-2:       rgba(228,240,236,0.68);
+      --text-3:       rgba(228,240,236,0.42);
+      --radius:       14px;
+      --radius-sm:    8px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Layout ─── */
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── Hero ─── */
+
+    #hero {
+      padding-top: 120px;
+      padding-bottom: 104px;
+      text-align: center;
+    }
+
+    .wordmark {
+      display: inline-block;
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .wordmark .dot {
+      color: var(--accent);
+    }
+
+    .tagline {
+      margin-top: 20px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: var(--text-2);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .badge-row {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .app-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #0A0A0A;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      padding: 13px 24px;
+      border-radius: 40px;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .app-store-badge:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .badge-icon {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    /* ─── Features ─── */
+
+    #features .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 36px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(63,177,206,0.22);
+      background: var(--accent-soft);
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .feature-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-desc {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+
+    /* ─── Privacy ─── */
+
+    #privacy {
+      text-align: center;
+    }
+
+    #privacy .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .privacy-headline {
+      font-size: clamp(1.15rem, 3vw, 1.4rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .privacy-body {
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .privacy-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(63,177,206,0.15);
+      border-radius: 40px;
+      padding: 6px 14px;
+      font-size: 0.8125rem;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── Support ─── */
+
+    #support {
+      text-align: center;
+    }
+
+    #support .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .support-headline {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .support-body {
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      margin-bottom: 24px;
+    }
+
+    .support-email {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      border-bottom: 1px solid rgba(63,177,206,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .support-email:hover {
+      border-color: var(--accent);
+    }
+
+    /* ─── Footer ─── */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--text-3);
+    }
+
+    .footer-copy .footer-dot {
+      color: var(--accent);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-2);
+    }
+
+    /* ─── Divider line accent ─── */
+
+    .accent-line {
+      width: 32px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 0 auto 32px;
+      opacity: 0.7;
+    }
+
+    /* ─── Responsive ─── */
+
+    @media (max-width: 540px) {
+      section {
+        padding: 72px 0;
+      }
+
+      #hero {
+        padding-top: 88px;
+        padding-bottom: 80px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Hero ─── -->
+  <section id="hero">
+    <div class="container">
+      <div class="wordmark">Field<span class="dot">.</span></div>
+      <p class="tagline">A field recording tool for sound artists, nature recordists, journalists, and curious ears.</p>
+      <div class="badge-row">
+        <a class="app-store-badge" href="#" aria-label="Download Field. on the App Store">
+          <span class="badge-icon">&#xf8ff;</span>
+          Download on the App Store
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ─── -->
+  <section id="features">
+    <div class="container">
+      <p class="section-label">Features</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x25CB;</span>
+          <div class="feature-title">Uncompromising Audio Quality</div>
+          <p class="feature-desc">Record in WAV, AIFF, FLAC, or AAC at up to 96 kHz / 32-bit. CD, Broadcast, and Studio quality tiers — you choose the resolution.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x2316;</span>
+          <div class="feature-title">Geo-tagged by Default</div>
+          <p class="feature-desc">Every recording is pinned to a place. Location, place name, region, and time of day are captured automatically and visible on a map.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x2604;</span>
+          <div class="feature-title">Live Sound Identification</div>
+          <p class="feature-desc">AI listens as you record and tags sounds in real time — birdsong, wind, rain, traffic, voices. Tags are timestamped and attached to the recording.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x2709;</span>
+          <div class="feature-title">Live Transcription &amp; Field Notes</div>
+          <p class="feature-desc">On-device speech recognition runs as you record. Your spoken observations are transcribed live and saved alongside the audio — no server, no account required.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x2601;</span>
+          <div class="feature-title">Weather &amp; Context</div>
+          <p class="feature-desc">Temperature and conditions are snapshotted at the moment of recording. Dawn, midday, golden hour, dusk, or night — the time of day is noted too.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x25A1;</span>
+          <div class="feature-title">Handcrafted Themes</div>
+          <p class="feature-desc">Six themes — Dark, Light, Dawn, Golden Hour, Night, Outdoors. Each is tuned for the light and mood you're recording in.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Privacy ─── -->
+  <section id="privacy">
+    <div class="container">
+      <p class="section-label">Privacy</p>
+      <div class="accent-line"></div>
+      <h2 class="privacy-headline">All processing is on-device.<br>No accounts. No cloud AI.</h2>
+      <p class="privacy-body">
+        Sound identification and speech transcription run entirely on your device using Apple's on-device frameworks. Field. never sends your audio, location, or transcripts to any server. Your recordings are yours.
+      </p>
+      <div class="privacy-chips">
+        <span class="chip">&#x2713;&nbsp; On-device processing</span>
+        <span class="chip">&#x2713;&nbsp; No account required</span>
+        <span class="chip">&#x2713;&nbsp; No audio leaves your device</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Support ─── -->
+  <section id="support">
+    <div class="container">
+      <p class="section-label">Support</p>
+      <h2 class="support-headline">Questions or feedback?</h2>
+      <p class="support-body">Bug reports, feature requests, and kind words are all welcome.</p>
+      <a class="support-email" href="mailto:support@fieldaudio.app">support@fieldaudio.app</a>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 Field<span class="footer-dot">.</span></span>
+        <nav class="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
