@@ -183,6 +183,95 @@
       line-height: 1.55;
     }
 
+    /* ─── Pro ─── */
+
+    #pro {
+      background: linear-gradient(180deg, transparent 0%, var(--accent-soft) 100%);
+    }
+
+    #pro .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .pro-headline {
+      font-size: clamp(1.4rem, 4vw, 1.85rem);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .pro-headline .pro-dot {
+      color: var(--accent);
+    }
+
+    .pro-subhead {
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      margin-bottom: 32px;
+    }
+
+    .pro-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .pro-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .pro-item-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-soft);
+      border-radius: 8px;
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .pro-item-text {
+      flex: 1;
+    }
+
+    .pro-item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+      letter-spacing: -0.01em;
+    }
+
+    .pro-item-desc {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    .pro-meta {
+      margin-top: 24px;
+      font-size: 0.8125rem;
+      color: var(--text-3);
+      text-align: center;
+    }
+
     /* ─── Privacy ─── */
 
     #privacy {
@@ -421,6 +510,55 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ─── Pro ─── -->
+  <section id="pro">
+    <div class="container">
+      <p class="section-label">Field. Pro</p>
+      <h2 class="pro-headline">Go further<span class="pro-dot">.</span></h2>
+      <p class="pro-subhead">A one-time upgrade. No subscription.</p>
+
+      <ul class="pro-list">
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x25A3;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Folders</div>
+            <p class="pro-item-desc">Organize recordings by project, trip, or session.</p>
+          </div>
+        </li>
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x2601;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">iCloud Sync</div>
+            <p class="pro-item-desc">Your library syncs across your devices through your own iCloud account.</p>
+          </div>
+        </li>
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x2702;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Trim &amp; Crop</div>
+            <p class="pro-item-desc">Set in and out points, preview the edit, save as new or replace.</p>
+          </div>
+        </li>
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x25C6;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Bookmarks</div>
+            <p class="pro-item-desc">Drop timestamped markers during playback. Add labels, tap to jump. Exported as DAW markers.</p>
+          </div>
+        </li>
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x25B6;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Video Export</div>
+            <p class="pro-item-desc">Share recordings as waveform videos in 16:9, 1:1, or 9:16 with optional title and location overlay.</p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="pro-meta">Upgrade in the app. Everything else stays free.</p>
     </div>
   </section>
 
