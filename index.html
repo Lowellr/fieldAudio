@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Field. — A field recording app for iOS. Soundmark detection, on-device sound ID, similar recordings, acoustic measurement, transcription, geo-tagging. For sound artists, nature recordists, and curious ears." />
+  <meta name="description" content="Field. — A field recording app for iOS. Soundmark detection, on-device sound ID, similar recordings, acoustic measurement, transcription, geo-tagging. For sound artists, nature recordists, and listeners." />
   <title>Field. — Field Recording for iOS</title>
   <style>
     *, *::before, *::after {
@@ -130,6 +130,39 @@
       width: 260px;
       border-radius: 40px;
       box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    /* ─── Recently Shipped ─── */
+
+    #recently-shipped {
+      padding: 72px 0;
+      text-align: center;
+    }
+
+    #recently-shipped .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .recent-headline {
+      font-size: clamp(1.15rem, 3vw, 1.35rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .recent-body {
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
     /* ─── Features ─── */
@@ -450,7 +483,7 @@
   <section id="hero">
     <div class="container">
       <div class="wordmark">Field<span class="dot">.</span></div>
-      <p class="tagline">A field recording tool for sound artists, nature recordists, journalists, and curious ears.</p>
+      <p class="tagline">A field recording tool for the people who listen to places.</p>
       <div class="badge-row">
         <a class="app-store-badge" href="https://apps.apple.com/us/app/field/id6760171759" aria-label="Download Field. on the App Store">
           <span class="badge-icon">&#xf8ff;</span>
@@ -463,7 +496,16 @@
   <!-- ─── Screenshot ─── -->
   <section id="screenshot">
     <div class="container">
-      <img class="phone-screenshot" src="stonebridge_field.PNG" alt="Field. detail view of a recording from Stone Arch Bridge: waveform, 'Mark as soundmark' link, location, acoustic pills (warm, active, close-mic'd), weather, and map" />
+      <img class="phone-screenshot" src="stonebridge_field.PNG" alt="Field. detail view of a recording from Stone Arch Bridge: waveform, Mark as soundmark link, location, acoustic pills (warm, active, close-mic'd), weather, and map" />
+    </div>
+  </section>
+
+  <!-- ─── Recently Shipped ─── -->
+  <section id="recently-shipped">
+    <div class="container">
+      <p class="section-label">Recently shipped</p>
+      <h2 class="recent-headline">Field 1.4: Soundmarks. December 2026.</h2>
+      <p class="recent-body">A way to mark and find recordings that capture something distinctive about a place.</p>
     </div>
   </section>
 
@@ -482,19 +524,27 @@
         <div class="feature-card">
           <span class="feature-icon">&#x2726;</span>
           <div class="feature-title">Soundmark</div>
-          <p class="feature-desc">Field listens for recordings that sound distinctive for a place. Mark your own — a creek, a cable car line, the particular hum of your kitchen — and build communities of sound across visits.</p>
+          <p class="feature-desc">A soundmark is a sound that belongs to a place: a car clacking over a trolley track, a bell that rings over your city. A sound that people who know a place would recognize at once.</p>
+          <p class="feature-desc">Mark your own, or let Field suggest them. Soundmarks group by place in your library, and you name each one yourself. A neighborhood, a trail, a room, whatever fits.</p>
+          <p class="feature-desc">The vocabulary comes from R. Murray Schafer's acoustic ecology, a framework for hearing places by what makes them sound like themselves.</p>
         </div>
 
         <div class="feature-card">
           <span class="feature-icon">&#x2604;</span>
           <div class="feature-title">Live Sound Identification</div>
-          <p class="feature-desc">On-device AI listens as you record and tags sounds in real time — birdsong, wind, rain, traffic, voices. Tags refine after each recording stops; tap any wrong one to suppress it.</p>
+          <p class="feature-desc">On-device AI listens as you record and tags sounds in real time: birdsong, wind, rain, traffic, voices. Tags refine after each recording; tap &times; on any wrong one to dismiss it.</p>
         </div>
 
         <div class="feature-card">
           <span class="feature-icon">&#x223C;</span>
           <div class="feature-title">Similar Recordings</div>
-          <p class="feature-desc">Pull up any recording and Field finds the others that sound like it — the same kind of acoustic moment from across your library.</p>
+          <p class="feature-desc">Pull up any recording and Field finds the others that sound like it. The same kind of acoustic moment from across your library.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x2295;</span>
+          <div class="feature-title">Auto-bookmarks</div>
+          <p class="feature-desc">Field marks high-confidence detections while you record. Find the events in long captures without scrubbing through them.</p>
         </div>
 
         <div class="feature-card">
@@ -506,7 +556,7 @@
         <div class="feature-card">
           <span class="feature-icon">&#x2709;</span>
           <div class="feature-title">Live Transcription &amp; Field Notes</div>
-          <p class="feature-desc">On-device speech recognition runs as you record. Your spoken observations are transcribed live and saved alongside the audio — no server, no account required.</p>
+          <p class="feature-desc">On-device speech recognition runs as you record. Your spoken observations are transcribed live and saved alongside the audio. No server, no account required.</p>
         </div>
 
         <div class="feature-card">
@@ -518,7 +568,7 @@
         <div class="feature-card">
           <span class="feature-icon">&#x2601;</span>
           <div class="feature-title">Weather &amp; Context</div>
-          <p class="feature-desc">Temperature and conditions are snapshotted at the moment of recording. Dawn, midday, golden hour, dusk, or night — the time of day is noted too.</p>
+          <p class="feature-desc">Temperature and conditions are snapshotted at the moment of recording. Dawn, midday, golden hour, dusk, or night: the time of day is noted too.</p>
         </div>
 
         <div class="feature-card">
@@ -550,7 +600,7 @@
           <span class="pro-item-icon">&#x2601;</span>
           <div class="pro-item-text">
             <div class="pro-item-title">iCloud Sync</div>
-            <p class="pro-item-desc">Your library syncs across your devices through your own iCloud account.</p>
+            <p class="pro-item-desc">Your library syncs across your devices through your own iCloud account. Audio downloads on demand when you open a recording; metadata syncs immediately.</p>
           </div>
         </li>
         <li class="pro-item">
@@ -558,6 +608,13 @@
           <div class="pro-item-text">
             <div class="pro-item-title">Smart Playlists</div>
             <p class="pro-item-desc">Rules-based collections that update themselves. Filter by tag, place, soundmark status, duration, or any combination.</p>
+          </div>
+        </li>
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x229C;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Per-tag thresholds</div>
+            <p class="pro-item-desc">Tune how confident Field needs to be before adding each individual tag.</p>
           </div>
         </li>
         <li class="pro-item">
@@ -601,7 +658,7 @@
       <div class="accent-line"></div>
       <h2 class="privacy-headline">Private by design.</h2>
       <p class="privacy-body">
-        Sound identification, transcription, and analysis run entirely on your device. Your recordings never leave your phone.
+        Sound identification, transcription, and analysis run entirely on your device. Field has no servers and never sees your data. Everything stays on your device unless you turn on iCloud Sync, and even then, your sync runs through your own iCloud account, not ours.
       </p>
       <div class="privacy-chips">
         <span class="chip">&#x2713;&nbsp; On-device processing</span>
@@ -625,7 +682,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-copy">&copy; 2026 Field<span class="footer-dot">.</span></span>
+        <span class="footer-copy">&copy; 2026 Field<span class="footer-dot">.</span> &nbsp;Made by Lowell Robinson.</span>
         <nav class="footer-links">
           <a href="#privacy">Privacy Policy</a>
         </nav>
