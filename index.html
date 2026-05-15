@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Field. — A field recording app for iOS. High-quality audio, geo-tagging, live sound identification, and speech transcription. For sound artists, nature recordists, and curious ears." />
+  <meta name="description" content="Field. — A field recording app for iOS. Soundmark detection, on-device sound ID, similar recordings, acoustic measurement, transcription, geo-tagging. For sound artists, nature recordists, and curious ears." />
   <title>Field. — Field Recording for iOS</title>
   <style>
     *, *::before, *::after {
@@ -480,21 +480,39 @@
         </div>
 
         <div class="feature-card">
-          <span class="feature-icon">&#x2316;</span>
-          <div class="feature-title">Geo-tagged by Default</div>
-          <p class="feature-desc">Every recording is pinned to a place. Location, place name, region, and time of day are captured automatically and visible on a map.</p>
+          <span class="feature-icon">&#x2726;</span>
+          <div class="feature-title">Soundmark</div>
+          <p class="feature-desc">Field listens for recordings that sound distinctive for a place. Mark your own — a creek, a cable car line, the particular hum of your kitchen — and build communities of sound across visits.</p>
         </div>
 
         <div class="feature-card">
           <span class="feature-icon">&#x2604;</span>
           <div class="feature-title">Live Sound Identification</div>
-          <p class="feature-desc">On-device AI listens as you record and tags sounds in real time — birdsong, wind, rain, traffic, voices. Tags are timestamped and attached to the recording.</p>
+          <p class="feature-desc">On-device AI listens as you record and tags sounds in real time — birdsong, wind, rain, traffic, voices. Tags refine after each recording stops; tap any wrong one to suppress it.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x223C;</span>
+          <div class="feature-title">Similar Recordings</div>
+          <p class="feature-desc">Pull up any recording and Field finds the others that sound like it — the same kind of acoustic moment from across your library.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x25C7;</span>
+          <div class="feature-title">Acoustic Fingerprint</div>
+          <p class="feature-desc">Field measures every recording: loudness, true peak, dynamic range, spectral character, spaciousness, activity. Read it as a phrase ("warm and expansive," "steady and intimate"), or as numbers in any DAW that reads BWF metadata.</p>
         </div>
 
         <div class="feature-card">
           <span class="feature-icon">&#x2709;</span>
           <div class="feature-title">Live Transcription &amp; Field Notes</div>
           <p class="feature-desc">On-device speech recognition runs as you record. Your spoken observations are transcribed live and saved alongside the audio — no server, no account required.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">&#x2316;</span>
+          <div class="feature-title">Geo-tagged by Default</div>
+          <p class="feature-desc">Every recording is pinned to a place. Location, place name, region, and time of day are captured automatically and visible on a map.</p>
         </div>
 
         <div class="feature-card">
@@ -536,6 +554,13 @@
           </div>
         </li>
         <li class="pro-item">
+          <span class="pro-item-icon">&#x25A6;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Smart Playlists</div>
+            <p class="pro-item-desc">Rules-based collections that update themselves. Filter by tag, place, soundmark status, duration, or any combination.</p>
+          </div>
+        </li>
+        <li class="pro-item">
           <span class="pro-item-icon">&#x2702;</span>
           <div class="pro-item-text">
             <div class="pro-item-title">Trim &amp; Crop</div>
@@ -547,6 +572,13 @@
           <div class="pro-item-text">
             <div class="pro-item-title">Bookmarks</div>
             <p class="pro-item-desc">Drop timestamped markers during playback. Add labels, tap to jump. Exported as DAW markers.</p>
+          </div>
+        </li>
+        <li class="pro-item">
+          <span class="pro-item-icon">&#x21AA;</span>
+          <div class="pro-item-text">
+            <div class="pro-item-title">Reaper Project Export</div>
+            <p class="pro-item-desc">Export recordings as Reaper sessions with tag-derived markers in place.</p>
           </div>
         </li>
         <li class="pro-item">
