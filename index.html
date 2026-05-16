@@ -167,6 +167,63 @@
       line-height: 1.6;
     }
 
+    /* ─── Soundmark Feature (promoted row) ─── */
+
+    #soundmark-feature {
+      padding: 64px 0;
+      background: var(--accent-soft);
+    }
+
+    .soundmark-feature__inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .soundmark-feature__image img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 32px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .soundmark-feature__copy h2 {
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+
+    .soundmark-feature__copy p {
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin: 0 0 12px;
+    }
+
+    .soundmark-feature__copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 720px) {
+      .soundmark-feature__inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .soundmark-feature__image {
+        order: -1;
+      }
+    }
+
     /* ─── Features ─── */
 
     #features .section-label {
@@ -518,6 +575,20 @@
     </div>
   </section>
 
+  <!-- ─── Soundmark Feature (promoted row) ─── -->
+  <section id="soundmark-feature">
+    <div class="soundmark-feature__inner">
+      <div class="soundmark-feature__image">
+        <img src="soundmark-candidate.png" alt="Field. Soundmark candidate sheet: a Hotel lobby bar recording at Warehouse District with the expanded prompt, dot-cluster visualization, and Mark / Not now buttons." />
+      </div>
+      <div class="soundmark-feature__copy">
+        <h2>Soundmarks find themselves.</h2>
+        <p>Field listens to where you've been. When a recording sounds different from the others you've made in a place, it lets you know — and you decide whether to mark it.</p>
+        <p>The word comes from R. Murray Schafer's acoustic ecology, a framework for hearing places by what makes them sound like themselves.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── Features ─── -->
   <section id="features">
     <div class="container">
@@ -528,14 +599,6 @@
           <span class="feature-icon">&#x25CB;</span>
           <div class="feature-title">Studio-Quality Capture</div>
           <p class="feature-desc">Record in WAV, AIFF, FLAC, or AAC at up to 96 kHz / 32-bit. CD, Broadcast, and Studio quality tiers — you choose the resolution.</p>
-        </div>
-
-        <div class="feature-card">
-          <span class="feature-icon">&#x2726;</span>
-          <div class="feature-title">Soundmark</div>
-          <p class="feature-desc">A soundmark is a sound that belongs to a place: a car clacking over a trolley track, a bell that rings over your city. A sound that people who know a place would recognize at once.</p>
-          <p class="feature-desc">Mark your own, or let Field suggest them. Soundmarks group by place in your library, and you name each one yourself. A neighborhood, a trail, a room, whatever fits.</p>
-          <p class="feature-desc">The word comes from R. Murray Schafer's acoustic ecology, a framework for hearing places by what makes them sound like themselves.</p>
         </div>
 
         <div class="feature-card">
