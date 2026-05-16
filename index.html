@@ -236,9 +236,8 @@
     }
 
     .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
+      column-count: 2;
+      column-gap: 16px;
     }
 
     .feature-card {
@@ -246,6 +245,10 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
+      margin-bottom: 16px;
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
       transition: border-color 0.2s ease, background 0.2s ease;
     }
 
@@ -533,7 +536,7 @@
       }
 
       .features-grid {
-        grid-template-columns: 1fr;
+        column-count: 1;
       }
 
       .footer-inner {
@@ -602,15 +605,21 @@
         </div>
 
         <div class="feature-card">
+          <span class="feature-icon">&#x25C7;</span>
+          <div class="feature-title">Acoustic Fingerprint</div>
+          <p class="feature-desc">Field measures every recording: loudness, true peak, dynamic range, spectral character, spaciousness, activity. Read it as a phrase ("warm and expansive," "steady and intimate"), or as numbers in any DAW that reads BWF metadata.</p>
+        </div>
+
+        <div class="feature-card">
           <span class="feature-icon">&#x2604;</span>
           <div class="feature-title">Live Sound Identification</div>
           <p class="feature-desc">On-device AI listens as you record and tags sounds in real time: birdsong, wind, rain, traffic, voices. Tags refine after each recording.</p>
         </div>
 
         <div class="feature-card">
-          <span class="feature-icon">&#x223C;</span>
-          <div class="feature-title">Similar Recordings</div>
-          <p class="feature-desc">Pull up any recording and Field finds the others that sound like it. The same kind of acoustic moment from across your library.</p>
+          <span class="feature-icon">&#x2709;</span>
+          <div class="feature-title">Live Transcription &amp; Field Notes</div>
+          <p class="feature-desc">On-device speech recognition runs as you record. Your spoken observations are transcribed live and saved alongside the audio.</p>
         </div>
 
         <div class="feature-card">
@@ -620,15 +629,9 @@
         </div>
 
         <div class="feature-card">
-          <span class="feature-icon">&#x25C7;</span>
-          <div class="feature-title">Acoustic Fingerprint</div>
-          <p class="feature-desc">Field measures every recording: loudness, true peak, dynamic range, spectral character, spaciousness, activity. Read it as a phrase ("warm and expansive," "steady and intimate"), or as numbers in any DAW that reads BWF metadata.</p>
-        </div>
-
-        <div class="feature-card">
-          <span class="feature-icon">&#x2709;</span>
-          <div class="feature-title">Live Transcription &amp; Field Notes</div>
-          <p class="feature-desc">On-device speech recognition runs as you record. Your spoken observations are transcribed live and saved alongside the audio.</p>
+          <span class="feature-icon">&#x223C;</span>
+          <div class="feature-title">Similar Recordings</div>
+          <p class="feature-desc">Pull up any recording and Field finds the others that sound like it. The same kind of acoustic moment from across your library.</p>
         </div>
 
         <div class="feature-card">
